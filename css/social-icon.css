@@ -1,0 +1,97 @@
+@keyframes gradientAnimation
+{
+    0%{ background-position: 0% 50% ; }
+    10%{background-position: 100% 50% ; transform: translateY(-7px) scale(1.1)}
+    20%{ background-position: 0% 50% ; transform: translateY(0px) scale(1)}
+    100%{ background-position: 0% 50%; }
+}
+
+.delay-1 {
+    animation-delay: 0s !important;
+}
+
+.delay-2 {
+    animation-delay: 2s !important;
+}
+
+.delay-3 {
+    animation-delay: 4s !important;
+}
+
+.delay-4 {
+    animation-delay: 6s !important;
+}
+
+.social-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease-in-out;
+    text-decoration: none;
+    line-height: 1;
+}
+
+.social-icon i {
+    font-size: 1.8rem;
+    color: white;
+    border-radius: 30%;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    flex-shrink: 0;
+    animation: gradientAnimation 10s ease infinite;
+}
+
+/* Telegram цвета и тени */
+.icon-tg {
+    background: linear-gradient(-45deg, #0088cc, #00d4ff, #0088cc);
+    background-size: 600%;
+    box-shadow: 0 3px 10px rgba(0, 136, 204, 0.5);
+}
+
+/* WhatsApp цвета и тени */
+.icon-wa {
+    background: linear-gradient(135deg, #1ba74e, #9cdf78, #1ba74e);
+    background-size: 600%;
+    box-shadow: 0 3px 10px rgba(37, 211, 102, 0.5);
+}
+
+/* Эффекты при наведении */
+.social-icon:hover {
+    transform: translateY(-7px) scale(1.1);
+}
+
+.social-icon:hover .icon-tg {
+    background: linear-gradient(135deg, #0088cc, #00d4ff, #0088cc);
+    background-size: 600%;
+}
+
+.social-icon:hover .icon-wa {
+    background: linear-gradient(135deg, #1ba74e, #9cdf78, #1ba74e);
+    background-size: 600%;
+}
+
+/* Ссылка телефона */
+.phone-link {
+    transition: all 0.2s ease;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    line-height: 1;
+    height: 100%;
+}
+
+.phone-link:hover {
+    opacity: 0.8;
+    transform: translateY(-3px) scale(1.1);
+}
+
+.phone-link i {
+    font-size: 1.3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

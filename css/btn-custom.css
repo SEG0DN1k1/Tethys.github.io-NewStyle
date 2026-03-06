@@ -1,0 +1,39 @@
+.btn-custom {
+    --bs-btn-color: #fff;
+    --bs-btn-bg: #502E01; /* Ваш цвет */
+    --bs-btn-border-color: #502E01;
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: #5A6770; /* Цвет при наведении */
+    --bs-btn-hover-border-color: #5A6770;
+    --bs-btn-focus-shadow-rgb: 37, 99, 235;
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: #012945;
+    --bs-btn-active-border-color: #012945;
+}
+.glass-button {
+  /* 1. Полупрозрачный фон (белый или цветной с низкой непрозрачностью) */
+  background: rgba(255, 255, 255, 0.2);
+  
+  /* 2. Размытие фона под элементом (самое важное) */
+  -webkit-backdrop-filter: blur(10px); /* Для Safari */
+  backdrop-filter: blur(1px);
+  
+  /* 3. Тонкая светлая граница для объема */
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  
+  /* 4. Скругление углов и тени */
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  
+  /* Дополнительные стили для кнопки */
+  padding: 10px 20px;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Эффект при наведении */
+.glass-button:hover {
+  background: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}

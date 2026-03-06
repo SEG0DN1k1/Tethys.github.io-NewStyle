@@ -1,0 +1,138 @@
+.hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Отправляем фон назад */
+    background: #0a0a0a; /* Темный глубокий фон */
+    overflow: hidden;
+}
+/* Основа сцены */
+.hero-stage {
+    position: relative;
+    height: 100vh;
+    background: #050505;
+    overflow: hidden;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-top: 94px;
+}
+/* Размытые световые пятна (софиты за сценой) */
+.stage-light {
+    position: absolute;
+    width: 60vw;
+    height: 60vw;
+    filter: blur(150px);
+    mix-blend-mode: screen;
+    border-radius: 50%;
+    opacity: 0.2;
+    z-index: 0;
+    pointer-events: none;
+    will-change: transform;
+}
+.blue-wash { background: #0077ff; top: -10%; left: -10%;}
+.green-wash { background: #00ff88; bottom: -10%; right: -10%;}
+/* Лазерные струны */
+.laser-string {
+    position: absolute;
+    width: 200%;
+    height: 1px;
+    left: var(--left);
+    top: var(--top);
+    background: linear-gradient(90deg, transparent, var(--color), transparent);
+    box-shadow: 0 0 15px var(--color);
+    mix-blend-mode: screen;
+    pointer-events: none;
+    opacity: 0;
+    animation: laserScan var(--duration) ease-in-out var(--delay) forwards;
+}
+@keyframes laserScan {
+    0%, 100% { 
+        transform: rotate(calc(var(--rotate1))) translateY(-10vh); 
+        opacity: 0; 
+    }
+    50% { 
+        transform: rotate(calc(var(--rotate2))) translatey(10vh);
+        opacity: var(--max-opacity);
+    }
+}
+/* Текст и типографика */
+.hero-title {
+    text-shadow: 0 0 40px rgba(0, 255, 136, 0.2);
+    font-size: clamp(2.5rem, 6vw, 5rem);
+    font-weight: 800;
+    line-height: 1.1;
+    z-index: 2;
+    position: relative;
+    margin-bottom: 1rem;
+}
+.hero-title span {
+    background: linear-gradient(90deg, #0077ff, #00ff88);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-subtitle {
+    font-size: 1.25rem;
+    opacity: 0.7;
+    max-width: 600px;
+    margin: 1.5rem auto 2.5rem;
+}
+
+/* Кнопка с неоновым свечением */
+.btn-neon {
+    padding: 1rem 2.5rem;
+    background: linear-gradient(-90deg, #ffffff, #00ff88, #ffffff);
+    background-size: 300%;
+    color: #000;
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 50px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
+    animation: gradientFlow 5s ease infinite;
+    border: none;
+    cursor: pointer;
+}
+.btn-neon:hover {
+    transform: translateY(-3px); /* Добавил легкий подъем */
+    box-shadow: 0 10px 30px rgba(0, 255, 136, 0.5);
+    background: #00ff88;
+}
+
+@keyframes gradientFlow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+/* Контейнер для кнопок */
+.hero-actions {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    z-index: 3;
+}
+
+/* Вторая кнопка (Контурная) */
+.btn-outline-white {
+    padding: 1rem 2.5rem;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50px;
+    transition: 0.3s;
+}
+
+.btn-outline-white:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: #fff;
+}
