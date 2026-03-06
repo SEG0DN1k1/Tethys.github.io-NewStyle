@@ -35,7 +35,7 @@ function createLaser() {
 
 // Запускаем цикл создания лазеров
 // Создаем первый сразу
-createLaser(); 
+createLaser();
 
 // И потом каждые 2.5 секунды новый
 setInterval(createLaser, 2000);

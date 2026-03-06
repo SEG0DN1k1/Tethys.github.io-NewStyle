@@ -52,11 +52,11 @@
     animation: laserScan var(--duration) ease-in-out var(--delay) forwards;
 }
 @keyframes laserScan {
-    0%, 100% { 
-        transform: rotate(calc(var(--rotate1))) translateY(-10vh); 
-        opacity: 0; 
+    0%, 100% {
+        transform: rotate(calc(var(--rotate1))) translateY(-10vh);
+        opacity: 0;
     }
-    50% { 
+    50% {
         transform: rotate(calc(var(--rotate2))) translatey(10vh);
         opacity: var(--max-opacity);
     }
